@@ -1,0 +1,13 @@
+.iframeClass {
+  overflow: hidden;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.iframeClass::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.iframeClass {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

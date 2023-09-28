@@ -1,0 +1,137 @@
+// ProfileEdit.scss
+
+.profile-edit {
+  padding: 20px;
+  background-color: #f7f7f7;
+
+  .main-section {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    form {
+      .mb-3 {
+        margin-bottom: 30px;
+      }
+
+      .form-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .form-control {
+        background-color: #f7f7f7;
+        border: none;
+        border-radius: 5px;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        color: #333;
+        font-size: 16px;
+        padding: 10px 15px;
+        transition: background-color 0.3s ease;
+
+        &:focus {
+          background-color: #e0e0e0;
+        }
+
+        &:disabled {
+          background-color: #f7f7f7;
+          color: #666;
+          cursor: not-allowed;
+        }
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      .btn-accept {
+        background-color: #9fcbfb;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+      
+      /* Styles for the secondary button */
+      .btn-secondary {
+        background-color: #6c757d;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #5a6268;
+        }
+      }
+      
+      /* Styles for the danger button */
+      .btn-danger {
+        background-color: #dc3545;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      
+        &:hover {
+          background-color: #c82333;
+        }
+      }
+    }
+
+    .alert {
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .main-section {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .main-section {
+      padding: 10px;
+    }
+  }
+
+  /* ButtonStyles.scss */
+
+/* Styles for the primary button */
+
+
+}

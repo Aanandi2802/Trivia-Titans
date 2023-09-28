@@ -1,0 +1,80 @@
+.trivia-quiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust the height as needed */
+  }
+  
+  .question {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+.btn-que{
+    margin-bottom: 20px;
+    margin-top: 10px;
+    
+}
+.btn-hint{
+  
+  margin-right: 20px;
+}
+
+.timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: black;
+    display: flex;
+
+  }
+
+  .score {
+    
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: black;
+    margin-right: 170px;
+
+  }
+
+  .trivia-quiz-container {
+    display: flex;
+  }
+  
+  /* Adjust the layout of the question and chat container as per your requirements */
+  
+  .chat-container {
+    width: 300px; /* Adjust the width of the chat container as needed */
+    /* Add styles to position the chat in the right corner */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    margin-top: 40px;
+  }
+ 
+  
+  /* Position the chat button on the top right */
+  .chat-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin-top: 10px;
+  }
+
+  
+  
+  /* Position the chat button on the top right */
+  .chat-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1; /* Ensure the chat button is placed above the timer */
+  }
+  
+  /* Add some spacing between the chat button and the timer */
+  

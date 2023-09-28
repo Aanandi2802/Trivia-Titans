@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Team</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- add reference to your CSS file -->
+</head>
+<body>
+    <div class="content-container">
+        <h1>Generate Team</h1>
+        <div id="player-info">
+            <p>Player ID: <span id="playerId"></span></p>
+            <button id="generateButton">Generate Team</button>
+        </div>
+        <p id="teamNameDisplay"></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Function to get the value of a fragment identifier by name from the URL
+            function getFragmentParam(name) {
+                const hash = window.location.hash;
+                if (hash) {
+                    const pair = hash.substring(1).split("=");
+                    if (pair[0] === name) {
+                        return pair[1];
+                    }
+                }
+                return null;
+            }
+
+            // Get the value of 'playerID' fragment identifier from the URL
+            const playerIdFromURL = getFragmentParam('playerID');
+
+            // If 'playerID' fragment identifier exists, update the playerId element with the extracted value
+            if (playerIdFromURL !== null) {
+                document.getElementById("playerId").innerText = playerIdFromURL;
+            }
+
+            document.getElementById("generateButton").addEventListener("click", async function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                try {
+                    // Use playerIdFromURL wherever you need the player ID in your fetch request
+                    const response = await fetch('/generate_team', {
+                    method: 'POST',
+                    headers: {
+                    'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({playerID: playerIdFromURL}),
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        document.getElementById("teamNameDisplay").innerText = "Team Name: " + data.teamName;
+                        window.location.href = "genteamdetails";
+                    } else {
+                        console.error('Failed to generate the team. Status:', response.status);
+                        window.location.href = "genteamdetails";
+                    }
+                } catch (error) {
+                    console.error('An error occurred while generating the team:', error);
+                    window.location.href = "genteamdetails";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

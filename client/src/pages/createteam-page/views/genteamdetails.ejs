@@ -1,0 +1,26 @@
+<!-- genteamdetails.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Details</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- add reference to your CSS file -->
+</head>
+<body>
+    <div class="content-container">
+        <h1>Enter Team Details</h1>
+        <div id="form-container">
+            <form action="/submit_team_details" method="post">
+                <label for="teamDescription">Team Description:</label><br>
+                <input type="text" id="teamDescription" name="teamDescription" required><br>
+                <input type="submit" value="Submit" id="submitBtn">
+            </form>
+        </div>
+        <hr>
+        <h2>Team Information</h2>
+        <div id="team-info">
+            <p>Team Name: <span id="teamName"><%= teamName %></span></p>
+            <p>Player ID: <span id="playerId"><%= playerID %></span></p>
+        </div>
+    </div>
+</body>
+</html>

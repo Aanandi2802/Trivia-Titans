@@ -1,0 +1,60 @@
+<!-- teamhome.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Home</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- add reference to your CSS file -->
+</head>
+<body>
+    <div class="content-container">
+        <h1>Welcome to the Team Home Page</h1>
+        <h2>Having Fun: <span id="playerName"><%= playerName %></span></h2>
+        <div id="team-details">
+            <p>Player ID: <span id="playerId"><%= playerID %></span></p>
+            <p>Team Name: <span id="teamName"><%= teamName %></span></p>
+            <p>Team Description: <span id="teamDesc"><%= teamDesc %></span></p>
+        </div>
+        <h2>Team Statistics:</h2>
+        <div id="team-stats">
+            <p>Games Played: <span id="gamesPlayed"><%= teamStats.games_played %></span></p>
+            <p>Games Won: <span id="gamesWon"><%= teamStats.games_won %></span></p>
+            <p>Games Lost: <span id="gamesLost"><%= gamesLost %></span></p>
+            <p>Total Points: <span id="totalPts"><%= teamStats.total_pts %></span></p>
+        </div>
+        <h2>Current Admin of the team: <span id="adminUser"><%= adminUser %></span></h2>
+        <h2>Members:</h2>
+        <div id="team-members">
+            <% teamMembers.forEach((member) => { %>
+                <div class="member">
+                    <p>Player Name: <span class="firstName"><%= member.firstName %></span> (ID: <span class="pid"><%= member.pid %></span>)</p>
+                    <% if (isAdmin) { %>
+                        <form action="/delete-player" method="POST" class="action-form">
+                            <input type="hidden" name="pid" value="<%= member.pid %>">
+                            <button type="submit" class="action-btn">Delete Player</button>
+                        </form>
+                        <form action="/promote-player" method="POST" class="action-form">
+                            <input type="hidden" name="pid" value="<%= member.pid %>">
+                            <button type="submit" class="action-btn">Promote to Admin</button>
+                        </form>
+                    <% } %>
+                </div>
+            <% }) %>
+            <% if (isAdmin) { %>
+                <form action="/leave-team" method="POST" class="leave-form">
+                    <input type="hidden" name="pid" value="<%= staticPlayerID %>">
+                    <button type="submit" class="leave-btn">Leave Team</button>
+                </form>
+                <button onclick="location.href='http://localhost:4000/add_members'" class="add-btn">Add Members</button>
+            <% } else { %>
+                <form action="/leave-team" method="POST" class="leave-form">
+                    <input type="hidden" name="pid" value="<%= staticPlayerID %>">
+                    <button type="submit" class="leave-btn">Leave Team</button>
+                </form>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

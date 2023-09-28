@@ -1,0 +1,21 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+// import "./pages/user-profile/firebase";
+export { default as HomePage } from "./home-page/home-page.component";
+export { default as LoginPage } from "./login-page/login-page.component";
+export { default as RegistrationPage } from "./registration-page/registration-page.component";
+export { default as NotFoundPage } from "./not-found-page/not-found.component";
+export { default as SetAnswersPage } from "./questions-answers-page/set-question-answer-page.component";
+export { default as RegistrationVerificationPage } from "./registration-page/registration-verification-page";
+export { default as ForgotPage } from "./forgot-page/forgot-page.component";
+export { default as VerifyResetPasswordPage } from "./forgot-page/verify-reset-password-page.compnent";
+export { default as VerifyAnswerPage } from "./questions-answers-page/verify-answer-page.component";
+export { default as ProfileEdit } from "./user-profile/ProfileEdit";
+export { default as MyProfile } from "./user-profile/MyProfile";
+export { default as CompareScores } from "./user-profile/CompareScores";
+export { default as TeamAffiliations } from "./user-profile/TeamAffiliations";
+export { default as UserStatistics } from "./user-profile/UserStatistics";
+// export { default as VerifyAnswerPage } from "./questions-answers-page/verify-answer-page.component";
+
+export { default as GRegistrationPage } from "./registration-page/google-registration-page.component";
+export { default as LeaderboardPage } from "./leaderboard-page/leaderboard";
+export { default as NotificationsAlerts } from "./notifications-alerts/notifications-alerts";

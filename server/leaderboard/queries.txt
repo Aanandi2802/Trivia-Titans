@@ -1,0 +1,20 @@
+CREATE OR REPLACE VIEW serverless-project-392613.firestore_export.getIndividualScores AS
+SELECT
+  JSON_EXTRACT_SCALAR(individual, '$.score') AS IndividualScore,
+  JSON_EXTRACT_SCALAR(JSON_EXTRACT_ARRAY(individual, '$.userId._path.segments')[OFFSET(1)]) AS IndividualID,
+  JSON_EXTRACT_SCALAR(game.data, '$.category') AS GameCategory,
+  *
+FROM
+  `serverless-project-392613.firestore_export.games_raw_latest` AS game,
+  UNNEST(JSON_EXTRACT_ARRAY(game.data, '$.individualScores')) AS individual
+
+
+CREATE OR REPLACE VIEW serverless-project-392613.firestore_export.getTeamScores AS
+SELECT
+  JSON_EXTRACT_SCALAR(team, '$.score') AS TeamScore,
+  JSON_EXTRACT_SCALAR(JSON_EXTRACT_ARRAY(team, '$.teamId._path.segments')[OFFSET(1)]) AS TeamID,
+  JSON_EXTRACT_SCALAR(game.data, '$.category') AS GameCategory,
+  *
+FROM
+  `serverless-project-392613.firestore_export.games_raw_latest` AS game,
+  UNNEST(JSON_EXTRACT_ARRAY(game.data, '$.teamScores')) AS team

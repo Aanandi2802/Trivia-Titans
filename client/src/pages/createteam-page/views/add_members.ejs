@@ -1,0 +1,30 @@
+<!-- add_members.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Members</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- add reference to your CSS file -->
+</head>
+<body>
+    <div class="content-container">
+        <h1>Online Users:</h1>
+        <ul id="online-users-list">
+            <% onlineUsers.forEach(user => { %>
+                <li class="user-item">
+                    <span class="user-details"><%= user.firstName %> (PID: <%= user.pid %>)</span>
+                    <form action="/add_member/<%= user.pid %>" method="POST" class="add-member-form" onsubmit="alert('Request has been sent!');">
+                        <!-- Pass receiverId and teamName as hidden input fields -->
+                        <input type="hidden" name="receiverId" value="<%= user.pid %>">
+                        <input type="hidden" name="teamName" value="<%= user.t_name %>">
+                        <button type="submit" class="add-btn">Add member</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+    <script>
+    // You can add your JavaScript code here
+    </script>
+</body>
+</html>

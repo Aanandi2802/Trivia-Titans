@@ -1,0 +1,228 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.content-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #005a9c;
+}
+
+#player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#player-info p {
+    margin: 0;
+}
+
+#playerId {
+    font-weight: bold;
+}
+
+#generateButton {
+    background-color: #005a9c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#generateButton:hover {
+    background-color: #003f6a;
+}
+
+#teamNameDisplay {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#form-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+#form-container label {
+    font-weight: bold;
+}
+
+#form-container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#submitBtn {
+    background-color: #005a9c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#submitBtn:hover {
+    background-color: #003f6a;
+}
+
+#team-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+#status-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#status-container p {
+    font-size: 18px;
+}
+
+#team-details, #team-stats, .member, .leave-form {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.member {
+    margin-bottom: 10px;
+}
+
+.member .action-form {
+    display: inline-block;
+}
+
+.action-btn, .leave-btn, .add-btn {
+    background-color: #005a9c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.action-btn:hover, .leave-btn:hover, .add-btn:hover {
+    background-color: #003f6a;
+}
+
+.leave-form, .add-btn {
+    display: inline-block;
+}
+
+.add-btn {
+    margin-left: 20px;
+}
+#team-details, #team-stats, .member, .leave-form {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.member {
+    margin-bottom: 10px;
+}
+
+.member .action-form {
+    display: inline-block;
+}
+
+.action-btn, .leave-btn, .add-btn {
+    background-color: #005a9c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.action-btn:hover, .leave-btn:hover, .add-btn:hover {
+    background-color: #003f6a;
+}
+
+.leave-form, .add-btn {
+    display: inline-block;
+}
+
+.add-btn {
+    margin-left: 20px;
+}
+#online-users-list {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.user-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.add-member-form {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.add-btn {
+    background-color: #005a9c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    background-color: #003f6a;
+}
+body {
+    overflow: hidden;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
